@@ -1,0 +1,47 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: tigera-operator
+spec:
+  chart:
+    spec:
+      chart: projectcalico
+      sourceRef:
+        kind: GitRepository
+        name: projectcalico
+        namespace: flux-system
+  interval: 1h0m0s
+  releaseName: tigera-operator
+  timeout: 10m
+  install:
+    remediation:
+      retries: 3
+    crds: Create
+  upgrade:
+    remediation:
+      retries: 3
+    crds: CreateReplace
+  values:
+    installation:
+      enabled: true
+    apiServer:
+      enabled: true
+    goldmane:
+      enabled: true
+    whisker:
+      enabled: true
+    defaultFelixConfiguration:
+      enabled: false
+    manageCRDs: true
+
+    resources: {}
+
+    tolerations:
+    - effect: NoExecute
+      operator: Exists
+    - effect: NoSchedule
+      operator: Exists
+
+    nodeSelector:
+      kubernetes.io/os: linux

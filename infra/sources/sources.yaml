@@ -1,0 +1,118 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: bitnami
+spec:
+  interval: 120m
+  url: https://charts.bitnami.com/bitnami
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: bitnami-oci
+spec:
+  type: "oci"
+  interval: 120m
+  url: oci://registry-1.docker.io/bitnamicharts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: emberstack
+spec:
+  interval: 120m
+  url: https://emberstack.github.io/helm-charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: falco
+spec:
+  interval: 120m
+  url: https://falcosecurity.github.io/charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: grafana
+spec:
+  interval: 120m
+  url: https://grafana.github.io/helm-charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: ingress-nginx
+spec:
+  interval: 120m
+  url: https://kubernetes.github.io/ingress-nginx
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: jenkins
+  namespace: flux-system
+spec:
+  interval: 1h0m0s
+  url: https://charts.jenkins.io
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: kyverno
+spec:
+  interval: 120m
+  url: https://kyverno.github.io/kyverno/
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: prometheus-community
+spec:
+  interval: 120m
+  url: https://prometheus-community.github.io/helm-charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: teleport
+spec:
+  interval: 120m
+  url: https://charts.releases.teleport.dev
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: victoriametrics
+spec:
+  interval: 120m
+  url: https://victoriametrics.github.io/helm-charts
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: sonarqube
+spec:
+  interval: 120m
+  url: https://SonarSource.github.io/helm-chart-sonarqube
+
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: projectcalico
+spec:
+  interval: 120m
+  url: https://docs.tigera.io/calico/charts
